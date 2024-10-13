@@ -166,21 +166,25 @@
 
         /* Mobil uyumlu stiller */
         @media (max-width: 600px) {
+            body {
+                padding: 20px; /* Kenar boşlukları */
+            }
             header {
-                font-size: 1.8em;
-                padding: 10px 20px;
+                font-size: 2em; /* Başlık boyutu */
+                padding: 10px;
             }
             nav {
-                flex-direction: column;
-                top: 80px; /* Üstten mesafe */
+                flex-direction: row; /* Butonlar yan yana */
+                flex-wrap: wrap; /* Taşma durumunda satıra geç */
+                top: 70px; /* Üstten mesafe */
             }
             nav a {
-                font-size: 1.3em;
-                margin: 5px 0;
+                font-size: 1.2em;
+                margin: 10px; /* Dış boşluk */
             }
             .content {
-                font-size: 1em;
-                margin-top: 60px; /* Daha az üstten mesafe */
+                font-size: 1em; /* Küçültülmüş yazı */
+                margin-top: 40px; /* Daha az üstten mesafe */
                 padding: 15px; /* Kenar boşlukları */
             }
             footer {
@@ -189,6 +193,17 @@
             }
             .social-link {
                 font-size: 1.3em;
+            }
+        }
+
+        /* Masaüstü uyumlu stiller */
+        @media (min-width: 601px) {
+            nav {
+                flex-direction: row; /* Butonlar yan yana */
+                top: 90px; /* Üstten mesafe */
+            }
+            .content {
+                margin-top: 120px; /* Üstten mesafe */
             }
         }
     </style>
@@ -216,7 +231,7 @@
             document.getElementById('aboutContent').style.display = 'block';
             document.getElementById('homeContent').style.display = 'none';
             document.querySelector('.social-media').style.display = 'none';
-            document.getElementById('membersContent').style.display = 'none'; 
+            document.getElementById('membersContent').style.display = 'none';
         }
 
         function nextPart() {
@@ -234,21 +249,21 @@
             document.getElementById('homeContent').style.display = 'block';
             document.getElementById('aboutContent').style.display = 'none';
             document.querySelector('.social-media').style.display = 'none';
-            document.getElementById('membersContent').style.display = 'none'; 
+            document.getElementById('membersContent').style.display = 'none';
         }
 
         function showMembers() {
             document.getElementById('membersContent').style.display = 'block';
             document.getElementById('aboutContent').style.display = 'none';
             document.querySelector('.social-media').style.display = 'none';
-            document.getElementById('homeContent').style.display = 'none'; 
+            document.getElementById('homeContent').style.display = 'none';
         }
 
         function showSocialMedia() {
             document.querySelector('.social-media').style.display = 'flex';
             document.getElementById('homeContent').style.display = 'none';
             document.getElementById('aboutContent').style.display = 'none';
-            document.getElementById('membersContent').style.display = 'none'; 
+            document.getElementById('membersContent').style.display = 'none';
         }
     </script>
 </head>
