@@ -210,16 +210,15 @@
     <script>
         let currentPart = 0;
         const aboutParts = [
-            "Ansızın bir okul günü, 11 Ekim 2024'te aramızda bir heyecan doğdu. E-spor alanında bir logo tasarlamak için toplandık ve ortaya şahane fotoğraflar çıkardık. Bu süreç, hepimize yeni bir heves kattı.",
-            "Hemen birkaç arkadaş seçtik ve cumartesi günü bir araya gelerek internet kafeye gitmeye karar verdik. O gün, sadece oyun oynamakla kalmadık; aynı zamanda dostluklarımızı pekiştirdik ve ortak bir hayal kurduk. İşte o gün, TRX E-Spor kuruldu!",
-            "Takımımızın temellerini bu enerjide attık ve heyecanla yeni maceralara atılmayı bekledik. Her biri farklı yeteneklere sahip olan ekip arkadaşlarımızla birlikte, hem eğlenmek hem de yarışmak için bir araya geldik.",
-            "TRX E-Spor ile birlikte, hayallerimizi gerçekleştirmek için çalışmaya ve birbirimizi desteklemeye hazırız!"
+            "Ansızın bir okul günü, 11 Ekim 2024'te aramızda bir heyecan doğdu. E-spor alanında bir logo tasarlamak, bir takım kurmak ve farklı oyunlarda rekabet etmek amacıyla kurulan TRX Esports, her yeni oyun ile birlikte büyümeyi hedefliyor.",
+            "Takımımız, farklı oyunlar ve platformlarda yeteneklerini geliştirmek için sürekli çaba sarf ediyor. Eğlence ve rekabetin birleştiği bu yolculukta her üye, kendi potansiyelini ortaya çıkarmak için buradayız.",
+            "Hayalimiz, sadece yarışmak değil, aynı zamanda oyun dünyasında tanınan bir marka olmak. TRX Esports olarak, birlikte daha fazlasını başarmak için çalışıyoruz."
         ];
 
         function showAboutPart(partIndex) {
             let buttons = '';
             if (partIndex > 0) {
-                buttons += `<button onclick="goBack()" class="back-button">Geri Dön</button>`;
+                buttons += `<button onclick="goBack()" class="continue-button">Geri Dön</button>`;
             }
             if (partIndex < aboutParts.length - 1) {
                 buttons += `<button onclick="nextPart()" class="continue-button">Devamını Oku</button>`;
