@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRX Esports</title>
+    <link rel="icon" href="https://yt3.googleusercontent.com/SGMHAjMkUy-YsbrxuPYPUqKH8GvIlyt0xjhEKsq3ABmPgSUsJmGA-y2s5vThtTVqnk0tBXX8=s160-c-k-c0x00ffffff-no-rj" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Siyah arka plan */
+            color: #fff; /* Beyaz yazı rengi */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        header {
+            padding: 15px 30px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e74c3c; /* Kırmızı yazı rengi */
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fadeIn 0.5s ease-in-out; /* Fade-in animasyonu */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111; /* Koyu gri nav arka planı */
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 90px;
+            transition: background-color 0.3s ease; /* Geçiş animasyonu */
+        }
+        nav:hover {
+            background-color: #222; /* Hover'da daha koyu */
+        }
+        nav a {
+            color: #e74c3c;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.6em;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: #c0392b; /* Daha koyu kırmızı */
+            transform: scale(1.05); /* Büyütme efekti */
+        }
+        .content {
+            display: none;
+            font-size: 1.2em; /* Daha küçük yazı boyutu */
+            line-height: 1.6; /* Satır yüksekliği */
+            margin-top: 120px;
+            opacity: 1;
+            max-width: 800px;
+            padding: 20px; /* Kenar boşlukları */
+            text-align: left;
+            animation: slideIn 0.5s ease-in-out; /* Slide-in animasyonu */
+            background: rgba(0, 0, 0, 0.8); /* Yarı saydam arka plan */
+            border-radius: 12px; /* Köşe yuvarlama */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        footer {
+            background-color: #e74c3c;
+            padding: 15px 20px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .social-media {
+            display: none;
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .social-link {
+            font-size: 1.5em;
+            color: #e74c3c;
+            text-decoration: none;
+            margin: 10px 0;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 50%; /* Yuvarlak çerçeve */
+            border: 2px solid #e74c3c; /* Çerçeve rengi */
+            width: 60px; /* Çerçeve genişliği */
+            height: 60px; /* Çerçeve yüksekliği */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-link:hover {
+            transform: scale(1.1);
+            color: #fff;
+            background-color: #e74c3c; /* Hover'da arka plan */
+        }
+        .social-link i {
+            font-size: 1.5em; /* İkon boyutu */
+        }
+
+        /* Üyeler bölüm stili */
+        #membersContent ul {
+            list-style: none;
+            padding: 0;
+        }
+        #membersContent li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #e74c3c;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz */
+            transition: background-color 0.3s ease; /* Geçiş animasyonu */
+        }
+        #membersContent li:hover {
+            background-color: rgba(231, 76, 60, 0.5); /* Hover'da arka plan */
+        }
+
+        /* Devamını Oku buton stili */
+        .continue-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #e74c3c; /* Kırmızı arka plan */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Geçiş animasyonu */
+        }
+        .continue-button:hover {
+            background-color: #c0392b; /* Daha koyu kırmızı */
+            transform: scale(1.05); /* Büyütme efekti */
+        }
+
+        /* Mobil uyumlu stiller */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.8em;
+                padding: 10px 20px;
+            }
+            nav {
+                flex-direction: column;
+                top: 110px; /* Üstten mesafe */
+            }
+            nav a {
+                font-size: 1.3em;
+                margin: 5px 0;
+            }
+            .content {
+                font-size: 1em; /* Küçültülmüş yazı */
+                margin-top: 80px;
+            }
+            footer {
+                font-size: 1em;
+            }
+            .social-link {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+    <script>
+        let currentPart = 0;
+        const aboutParts = [
+            "Ansızın bir okul günü, 11 Ekim 2024'te aramızda bir heyecan doğdu. E-spor alanında bir logo tasarlamak için toplandık ve ortaya şahane fotoğraflar çıkardık. Bu süreç, hepimize yeni bir heves kattı.",
+            "Hemen birkaç arkadaş seçtik ve cumartesi günü bir araya gelerek internet kafeye gitmeye karar verdik. O gün, sadece oyun oynamakla kalmadık; aynı zamanda dostluklarımızı pekiştirdik ve ortak bir hayal kurduk. İşte o gün, TRX E-Spor kuruldu!",
+            "Takımımızın temellerini bu enerjide attık ve heyecanla yeni maceralara atılmayı bekledik. Her biri farklı yeteneklere sahip olan ekip arkadaşlarımızla birlikte, hem eğlenmek hem de yarışmak için bir araya geldik.",
+            "TRX E-Spor ile birlikte, hayallerimizi gerçekleştirmek için çalışmaya ve birbirimizi desteklemeye hazırız!"
+        ];
+
+        function showAboutPart(partIndex) {
+            let buttons = '';
+            if (partIndex > 0) {
+                buttons += `<button onclick="goBack()" class="back-button">Geri Dön</button>`;
+            }
+            if (partIndex < aboutParts.length - 1) {
+                buttons += `<button onclick="nextPart()" class="continue-button">Devamını Oku</button>`;
+            }
+            document.getElementById('aboutContent').innerHTML = `
+                <p>${aboutParts[partIndex]}</p>
+                ${buttons}
+            `;
+            document.getElementById('aboutContent').style.display = 'block';
+            document.getElementById('homeContent').style.display = 'none';
+            document.querySelector('.social-media').style.display = 'none';
+            document.getElementById('membersContent').style.display = 'none'; // Üyeler bölümünü gizle
+        }
+
+        function nextPart() {
+            currentPart++;
+            showAboutPart(currentPart);
+        }
+
+        function goBack() {
+            currentPart = Math.max(0, currentPart - 1);
+            showAboutPart(currentPart);
+        }
+
+        function showHome() {
+            currentPart = 0;
+            document.getElementById('homeContent').style.display = 'block';
+            document.getElementById('aboutContent').style.display = 'none';
+            document.querySelector('.social-media').style.display = 'none';
+            document.getElementById('membersContent').style.display = 'none'; // Üyeler bölümünü gizle
+        }
+
+        function showMembers() {
+            document.getElementById('membersContent').style.display = 'block';
+            document.getElementById('aboutContent').style.display = 'none';
+            document.querySelector('.social-media').style.display = 'none';
+            document.getElementById('homeContent').style.display = 'none'; // Ana sayfayı gizle
+        }
+
+        function showSocialMedia() {
+            document.querySelector('.social-media').style.display = 'flex';
+            document.getElementById('homeContent').style.display = 'none';
+            document.getElementById('aboutContent').style.display = 'none';
+            document.getElementById('membersContent').style.display = 'none'; // Üyeler bölümünü gizle
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        TRX Esports
+    </header>
+
+    <nav>
+        <a href="#" onclick="showHome()"><i class="fas fa-home"></i> Ana Sayfa</a>
+        <a href="#" onclick="showAboutPart(currentPart)"><i class="fas fa-info-circle"></i> Hakkımızda</a>
+        <a href="#" onclick="showMembers()"><i class="fas fa-users"></i> Üyeler</a>
+        <a href="#" onclick="showSocialMedia()"><i class="fab fa-instagram"></i> Sosyal Medya</a>
+    </nav>
+
+    <section id="homeContent" class="content" style="display: block;">
+        <h1>Hoş Geldiniz!</h1>
+        <p>TRX Esports ile eğlenceli ve rekabet dolu bir yolculuğa çıkmaya hazır olun!</p>
+    </section>
+
+    <section id="aboutContent" class="content" style="display: none;"></section>
+
+    <section id="membersContent" class="content" style="display: none;">
+        <h2>Üyeler</h2>
+        <ul>
+            <li>Bahadır = TRX Elektrici</li>
+            <li>Ahmet = TRX Direnç</li>
+            <li>Atakan = TRX AKIMCI</li>
+            <li>Resul = Electro</li>
+            <li>Fatih = Voltaj</li>
+        </ul>
+    </section>
+
+    <div class="social-media">
+        <h2>Sosyal Medya</h2>
+        <a href="https://www.instagram.com/trxe_sports" class="social-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.youtube.com/@TRX-E-SPORTs" class="social-link" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="#" class="social-link"><i class="fab fa-discord"></i> Discord</a>
+    </div>
+
+    <footer>
+        © 2024 TRX Esports. Tüm hakları saklıdır.
+    </footer>
+
+</body>
+</html>
