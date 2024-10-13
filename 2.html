@@ -12,8 +12,8 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000; /* Siyah arka plan */
-            color: #fff; /* Beyaz yazı rengi */
+            background-color: #000;
+            color: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,14 +27,14 @@
             padding: 15px 30px;
             font-size: 2.5em;
             font-weight: bold;
-            color: #e74c3c; /* Kırmızı yazı rengi */
+            color: #e74c3c;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            animation: fadeIn 0.5s ease-in-out; /* Fade-in animasyonu */
+            animation: fadeIn 0.5s ease-in-out;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -43,17 +43,17 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #111; /* Koyu gri nav arka planı */
+            background-color: #111;
             padding: 15px;
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             position: absolute;
             top: 90px;
-            transition: background-color 0.3s ease; /* Geçiş animasyonu */
+            transition: background-color 0.3s ease;
         }
         nav:hover {
-            background-color: #222; /* Hover'da daha koyu */
+            background-color: #222;
         }
         nav a {
             color: #e74c3c;
@@ -66,21 +66,21 @@
         }
         nav a:hover {
             color: #fff;
-            background-color: #c0392b; /* Daha koyu kırmızı */
-            transform: scale(1.05); /* Büyütme efekti */
+            background-color: #c0392b;
+            transform: scale(1.05);
         }
         .content {
             display: none;
-            font-size: 1.2em; /* Daha küçük yazı boyutu */
-            line-height: 1.6; /* Satır yüksekliği */
+            font-size: 1.2em;
+            line-height: 1.6;
             margin-top: 120px;
             opacity: 1;
             max-width: 800px;
-            padding: 20px; /* Kenar boşlukları */
+            padding: 20px;
             text-align: left;
-            animation: slideIn 0.5s ease-in-out; /* Slide-in animasyonu */
-            background: rgba(0, 0, 0, 0.8); /* Yarı saydam arka plan */
-            border-radius: 12px; /* Köşe yuvarlama */
+            animation: slideIn 0.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
         @keyframes slideIn {
@@ -112,10 +112,10 @@
             position: relative;
             transition: all 0.3s ease;
             padding: 10px;
-            border-radius: 50%; /* Yuvarlak çerçeve */
-            border: 2px solid #e74c3c; /* Çerçeve rengi */
-            width: 60px; /* Çerçeve genişliği */
-            height: 60px; /* Çerçeve yüksekliği */
+            border-radius: 50%;
+            border: 2px solid #e74c3c;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -123,10 +123,10 @@
         .social-link:hover {
             transform: scale(1.1);
             color: #fff;
-            background-color: #e74c3c; /* Hover'da arka plan */
+            background-color: #e74c3c;
         }
         .social-link i {
-            font-size: 1.5em; /* İkon boyutu */
+            font-size: 1.5em;
         }
 
         /* Üyeler bölüm stili */
@@ -139,11 +139,11 @@
             padding: 10px;
             border: 1px solid #e74c3c;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz */
-            transition: background-color 0.3s ease; /* Geçiş animasyonu */
+            background: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
         }
         #membersContent li:hover {
-            background-color: rgba(231, 76, 60, 0.5); /* Hover'da arka plan */
+            background-color: rgba(231, 76, 60, 0.5);
         }
 
         /* Devamını Oku buton stili */
@@ -153,15 +153,15 @@
             padding: 10px 20px;
             font-size: 1.2em;
             color: #fff;
-            background-color: #e74c3c; /* Kırmızı arka plan */
+            background-color: #e74c3c;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s; /* Geçiş animasyonu */
+            transition: background-color 0.3s, transform 0.3s;
         }
         .continue-button:hover {
-            background-color: #c0392b; /* Daha koyu kırmızı */
-            transform: scale(1.05); /* Büyütme efekti */
+            background-color: #c0392b;
+            transform: scale(1.05);
         }
 
         /* Mobil uyumlu stiller */
@@ -172,18 +172,20 @@
             }
             nav {
                 flex-direction: column;
-                top: 110px; /* Üstten mesafe */
+                top: 80px; /* Üstten mesafe */
             }
             nav a {
                 font-size: 1.3em;
                 margin: 5px 0;
             }
             .content {
-                font-size: 1em; /* Küçültülmüş yazı */
-                margin-top: 80px;
+                font-size: 1em;
+                margin-top: 60px; /* Daha az üstten mesafe */
+                padding: 15px; /* Kenar boşlukları */
             }
             footer {
                 font-size: 1em;
+                padding: 10px; /* Düşük üst ve alt boşluk */
             }
             .social-link {
                 font-size: 1.3em;
@@ -214,7 +216,7 @@
             document.getElementById('aboutContent').style.display = 'block';
             document.getElementById('homeContent').style.display = 'none';
             document.querySelector('.social-media').style.display = 'none';
-            document.getElementById('membersContent').style.display = 'none'; // Üyeler bölümünü gizle
+            document.getElementById('membersContent').style.display = 'none'; 
         }
 
         function nextPart() {
@@ -232,21 +234,21 @@
             document.getElementById('homeContent').style.display = 'block';
             document.getElementById('aboutContent').style.display = 'none';
             document.querySelector('.social-media').style.display = 'none';
-            document.getElementById('membersContent').style.display = 'none'; // Üyeler bölümünü gizle
+            document.getElementById('membersContent').style.display = 'none'; 
         }
 
         function showMembers() {
             document.getElementById('membersContent').style.display = 'block';
             document.getElementById('aboutContent').style.display = 'none';
             document.querySelector('.social-media').style.display = 'none';
-            document.getElementById('homeContent').style.display = 'none'; // Ana sayfayı gizle
+            document.getElementById('homeContent').style.display = 'none'; 
         }
 
         function showSocialMedia() {
             document.querySelector('.social-media').style.display = 'flex';
             document.getElementById('homeContent').style.display = 'none';
             document.getElementById('aboutContent').style.display = 'none';
-            document.getElementById('membersContent').style.display = 'none'; // Üyeler bölümünü gizle
+            document.getElementById('membersContent').style.display = 'none'; 
         }
     </script>
 </head>
